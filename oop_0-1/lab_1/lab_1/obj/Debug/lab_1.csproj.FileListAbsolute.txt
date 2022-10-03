@@ -1,8 +1,0 @@
-D:\Documents\Code\labs_3S\oop_0-1\lab_1\lab_1\obj\Debug\lab_1.csproj.AssemblyReference.cache
-D:\Documents\Code\labs_3S\oop_0-1\lab_1\lab_1\obj\Debug\lab_1.csproj.SuggestedBindingRedirects.cache
-D:\Documents\Code\labs_3S\oop_0-1\lab_1\lab_1\obj\Debug\lab_1.csproj.CoreCompileInputs.cache
-D:\Documents\Code\labs_3S\oop_0-1\lab_1\lab_1\bin\Debug\lab_1.exe.config
-D:\Documents\Code\labs_3S\oop_0-1\lab_1\lab_1\bin\Debug\lab_1.exe
-D:\Documents\Code\labs_3S\oop_0-1\lab_1\lab_1\bin\Debug\lab_1.pdb
-D:\Documents\Code\labs_3S\oop_0-1\lab_1\lab_1\obj\Debug\lab_1.exe
-D:\Documents\Code\labs_3S\oop_0-1\lab_1\lab_1\obj\Debug\lab_1.pdb
