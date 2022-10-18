@@ -1,9 +1,12 @@
 import pyodbc
+import pathlib
+import os
 
+PATH_TO_FOLDER = pathlib.Path(__file__).parents[0]
 connectString = (
     "Driver={SQL Server};"
     "Server=DESKTOP-HQ83LCC;"
-    "Database=S_MyBase;"
+    "Database=master;"
     "Trusted_Connection=yes;"
 )
 connect = pyodbc.connect(connectString)
@@ -29,6 +32,13 @@ try:
     cur.commit()
 except:
     print("Таблица [Клиенты] не существует.")
+try:
+    cur.execute("USE master")
+    cur.commit()
+    cur.execute("DROP DATABASE S_MyBASE")
+    cur.commit()
+except:
+    print("База данных [S_MyBASE] не существует.")
 # cur.execute(
 #     '''
 #             create table dbo.Employee
@@ -67,6 +77,28 @@ except:
 # insert into dbo.EmployeesPositions(EmployeeId, PositionId) values (2, 3)
 # insert into dbo.EmployeesPositions(EmployeeId, PositionId) values (3, 3)'''
 # )
+cur.execute("""USE master""")
+cur.commit()
+cur.execute(
+    f"""CREATE DATABASE S_MyBASE
+    ON PRIMARY
+    (name = N'S_MyBASE_mdf', filename = N'{PATH_TO_FOLDER}\\S_MyBASE_mdf.mdf',
+    size = 10240Kb, maxsize = UNLIMITED, filegrowth = 1024Kb),
+    (name = N'S_MyBASE_ndf', filename = N'{PATH_TO_FOLDER}\\S_MyBASE_ndf.ndf',
+    size = 10240Kb, maxsize = 1Gb, filegrowth = 25%),
+    FILEGROUP fg1
+    (name = N'S_MyBASE_fg1_1', filename = N'{PATH_TO_FOLDER}\\S_MyBASE_fg1-1.ndf',
+    size = 10240Kb, maxsize = 1Gb, filegrowth = 25%),
+    (name = N'S_MyBASE_fg1_2', filename = N'{PATH_TO_FOLDER}\\S_MyBASE_fg1-2.ndf',
+    size = 10240Kb, maxsize = 1Gb, filegrowth = 25%)
+    LOG ON
+    (name = N'S_MyBASE_log', filename = N'{PATH_TO_FOLDER}\\S_MyBASE_log.ldf',
+    size = 10240Kb, maxsize=2048Gb, filegrowth=10%)
+    """
+)
+cur.commit()
+cur.execute("""USE S_MyBASE""")
+cur.commit()
 cur.execute(
     """CREATE TABLE dbo.Клиенты (
         [Номер покупателя] INTEGER PRIMARY KEY,
@@ -76,7 +108,7 @@ cur.execute(
         Адрес TEXT NOT NULL,
         Телефон TEXT NOT NULL,
         [E-mail] TEXT NOT NULL
-    )
+    ) ON fg1
     INSERT INTO dbo.Клиенты([Номер покупателя], [Фамилия покупателя], [Имя покупателя], [Отчество покупателя], Адрес, Телефон, [E-mail]) VALUES (1, N'Солодкий', N'Денис', N'Викторович', N'г.Минск', N'+375298750375', N'Denis@gmail.com')
     INSERT INTO dbo.Клиенты([Номер покупателя], [Фамилия покупателя], [Имя покупателя], [Отчество покупателя], Адрес, Телефон, [E-mail]) VALUES (2, N'Кравченко', N'Виталий', N'Андреевич', N'г.Витебск', N'+375335709822', N'TheOne@gmail.com')
     INSERT INTO dbo.Клиенты([Номер покупателя], [Фамилия покупателя], [Имя покупателя], [Отчество покупателя], Адрес, Телефон, [E-mail]) VALUES (3, N'Дацик', N'Тимофей', N'Борисович', N'г.Брест', N'+375178488821', N'TheIronMan@gmail.com')
@@ -88,9 +120,14 @@ cur.execute(
         [Номер товара] INTEGER PRIMARY KEY,
         [Название товара] TEXT NOT NULL,
         [Кол-во товара на складе] INTEGER NOT NULL,
-        [Цена в рублях] REAL NOT NULL,
-        [Единицы измерения] TEXT NOT NULL
-    )
+        [Цена в рублях] REAL NOT NULL
+    ) ON fg1"""
+)
+cur.commit()
+cur.execute("""ALTER TABLE dbo.Товары ADD [Единицы измерения] TEXT NOT NULL""")
+cur.commit()
+cur.execute(
+    """
     INSERT INTO dbo.Товары([Номер товара], [Название товара], [Кол-во товара на складе], [Цена в рублях], [Единицы измерения]) VALUES (1, N'Багет', 200, 1.8, N'штук')
     INSERT INTO dbo.Товары([Номер товара], [Название товара], [Кол-во товара на складе], [Цена в рублях], [Единицы измерения]) VALUES (2, N'Нож', 9, 20.85, N'штук')
     INSERT INTO dbo.Товары([Номер товара], [Название товара], [Кол-во товара на складе], [Цена в рублях], [Единицы измерения]) VALUES (3, N'Тапки', 21, 10.5, N'штук')
@@ -100,11 +137,11 @@ cur.commit()
 cur.execute(
     """CREATE TABLE dbo.Заказы (
         [Дата продажи] DATE PRIMARY KEY,
-        [Номер покупателя] INTEGER FOREIGN KEY REFERENCES dbo.Клиенты([Номер покупателя]),
-        [Номер товара] INTEGER FOREIGN KEY REFERENCES dbo.Товары([Номер товара]),
+        [Номер покупателя] INTEGER NOT NULL FOREIGN KEY REFERENCES dbo.Клиенты([Номер покупателя]),
+        [Номер товара] INTEGER NOT NULL FOREIGN KEY REFERENCES dbo.Товары([Номер товара]),
         [Кол-во заказаного товара] INTEGER NOT NULL,
         Скидка REAL NOT NULL
-    )
+    ) ON fg1
     INSERT INTO dbo.Заказы([Дата продажи], [Номер покупателя], [Номер товара], [Кол-во заказаного товара], Скидка) VALUES ('2020-12-08', 1, 1, 1, 0.02)
     INSERT INTO dbo.Заказы([Дата продажи], [Номер покупателя], [Номер товара], [Кол-во заказаного товара], Скидка) VALUES ('2021-09-21', 2, 2, 2, 0.2)
     INSERT INTO dbo.Заказы([Дата продажи], [Номер покупателя], [Номер товара], [Кол-во заказаного товара], Скидка) VALUES ('2022-05-11', 3, 3, 10, 0.1)
@@ -115,11 +152,44 @@ cur.execute(
     """CREATE TABLE dbo.Скидки (
         [Номер покупателя] INTEGER PRIMARY KEY REFERENCES dbo.Клиенты([Номер покупателя]),
         Скидка REAL NOT NULL
-    )
+    ) ON fg1
     INSERT INTO dbo.Скидки([Номер покупателя], Скидка) VALUES (1, 0.02)
     INSERT INTO dbo.Скидки([Номер покупателя], Скидка) VALUES (2, 0.2)
     INSERT INTO dbo.Скидки([Номер покупателя], Скидка) VALUES (3, 0.1)
     """
 )
 cur.commit()
+
+
+def printSaleTable():
+    cur.execute("""SELECT * FROM dbo.Скидки""")
+    print("\n\t\t===Скидки===\n[Номер покупателя]\tСкидка")
+    counter = 0
+    for item in cur.fetchall():
+        print(f"{item[0]}\t\t\t{round(item[1] * 100)}%")
+        counter += 1
+    print(f"Итого: {counter} элемента(ов).")
+    cur.execute(
+        """SELECT * FROM dbo.Скидки
+        WHERE Скидка >= 0.1"""
+    )
+    print(f"Из них {len(cur.fetchall())} скидка(ок) более 10%.")
+
+
+printSaleTable()
+cur.execute("""UPDATE dbo.Скидки SET Скидка = Скидка / 2""")
+cur.commit()
+printSaleTable()
+cur.execute(
+    """SELECT DISTINCT * FROM dbo.Заказы
+    WHERE [Дата продажи]
+    BETWEEN '2021-01-01' AND '2022-01-01'"""
+)
+print("\nЗадание №6:")
+for item in cur.fetchall():
+    print(item)
 connect.close()
+
+
+print("\nЗадание №8:")
+os.system('sqlcmd -d S_MyBASE -Q "SELECT * FROM dbo.Скидки"')

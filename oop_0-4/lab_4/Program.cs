@@ -1,0 +1,33 @@
+﻿using System;
+
+namespace lab_4.Classes
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Military miForRef = new Military("Denis");
+            Student stForRef = new Student("Ilya");
+            Learner st = stForRef as Learner;
+            Worker mi = miForRef as Worker;
+            Turner tu = new Turner("Vladick");
+            ExtramuralStudent ex = new ExtramuralStudent("Danik");
+            Programmer pr = new Programmer("Egor");
+
+            Console.WriteLine(mi.ToString());
+            Console.WriteLine(tu.ToString());
+            Console.WriteLine(st.ToString());
+            Console.WriteLine(ex.ToString());
+            Console.WriteLine(pr.ToString());
+            Console.WriteLine($"pr.Equals(ex) == {pr.Equals(ex)}; pr.ToString() == \"{pr.ToString()}\"; pr.GetHashCode() == {pr.GetHashCode()};");
+
+            Printer printer = new Printer();
+            IObject iobject = printer as Printer;
+
+            Console.WriteLine();
+            printer.IAmPrinting(printer);
+            Console.WriteLine();
+            iobject.IAmPrinting(iobject);
+        }
+    }
+}
