@@ -1,0 +1,15 @@
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\kr_1.csproj.AssemblyReference.cache
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\kr_1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\kr_1.AssemblyInfoInputs.cache
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\kr_1.AssemblyInfo.cs
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\kr_1.csproj.CoreCompileInputs.cache
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\bin\Debug\net6.0\kr_1.exe
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\bin\Debug\net6.0\kr_1.deps.json
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\bin\Debug\net6.0\kr_1.runtimeconfig.json
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\bin\Debug\net6.0\kr_1.dll
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\bin\Debug\net6.0\kr_1.pdb
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\kr_1.dll
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\refint\kr_1.dll
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\kr_1.pdb
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\kr_1.genruntimeconfig.cache
+D:\Documents\Code\labs_3S\oop_0-4\kr_1\obj\Debug\net6.0\ref\kr_1.dll
