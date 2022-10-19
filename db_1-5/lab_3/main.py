@@ -39,6 +39,10 @@ try:
     cur.commit()
 except:
     print("База данных [S_MyBASE] не существует.")
+
+if input("exit?(y/n)\n") == "y":
+    raise Exception("Программа завершена!")
+
 # cur.execute(
 #     '''
 #             create table dbo.Employee
