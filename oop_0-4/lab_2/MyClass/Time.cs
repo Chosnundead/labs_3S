@@ -10,6 +10,7 @@ public class Time
     private string timeFormat = "24h";
     static int numberOfObjects = 0;
 
+
     public bool Equals(Time time)
     {
         return (time.h == this.h && time.min == this.min && time.sec == this.sec) ? true : false;
