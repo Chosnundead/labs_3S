@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Layout } from "antd";
+import { BackTop, Layout } from "antd";
 import { Body } from "../Components/Body";
 import { Head } from "../Components/Head";
 import { Foot } from "../Components/Foot";
@@ -17,11 +17,8 @@ export const MainPage = () => {
     <div>
       <Layout className="layout">
         <Head setBody={setBody}></Head>
-        <div>
-          {body}
-          {screenSize}
-        </div>
         <Body body={body} screenSize={screenSize}></Body>
+        <BackTop></BackTop>
         <Foot></Foot>
       </Layout>
     </div>

@@ -26,6 +26,7 @@ namespace StrClass
             Console.WriteLine($"Len:{StrExtension.Len(stroka)}");
             Console.WriteLine($"MinMax:({StrExtension.MinMax(stroka)[0]}, {StrExtension.MinMax(stroka)[1]})");
             Console.WriteLine(stroka.Len());
+            //метод расширения и перегрузка операторов
         }
     }
 }

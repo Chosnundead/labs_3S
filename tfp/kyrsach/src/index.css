@@ -17,6 +17,7 @@ code {
   padding: 24px;
   background: #fff;
 }
+
 .logo {
   float: left;
   width: 120px;
@@ -31,4 +32,29 @@ code {
 
 .App {
   text-align: center;
+}
+
+.nav-menu-item-text {
+  margin-left: 6px;
+}
+
+.layout {
+  background: rgba(0, 0, 0, 0.5);
+  background-image: url("Images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.margin-between-content {
+  margin-top: 24px;
+}
+
+.title-adaptive {
+  font-size: 24px;
+  font-weight: 550;
 }

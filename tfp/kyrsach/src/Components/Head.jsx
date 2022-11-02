@@ -1,9 +1,10 @@
 import React from "react";
 import { Layout, Menu } from "antd";
+import { NavMenuItem } from "./NavMenuItem";
 const { Header } = Layout;
 
 export const Head = ({ setBody }) => {
-  const navMenu = ["Главная", "Продукция", "Акции"];
+  const navMenu = ["Главная", "Продукция", "Акции", "Контакты"];
   return (
     <div>
       <Header>
@@ -16,7 +17,7 @@ export const Head = ({ setBody }) => {
             const key = index + 1;
             return {
               key,
-              label: item,
+              label: <NavMenuItem item={item} />,
             };
           })}
           onClick={(item) => {
