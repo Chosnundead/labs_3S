@@ -7,6 +7,10 @@ namespace lab_4.Classes
 {
     abstract public class Worker : Person
     {
+        public Worker()
+        {
+            Console.WriteLine("Worker class created!");
+        }
         private string name;
         public string? workPlace;
         public virtual string getName() { return this.name; }

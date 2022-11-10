@@ -12,6 +12,7 @@ namespace lab_4.Classes
             Worker mi = miForRef as Worker;
             Turner tu = new Turner("Vladick");
             ExtramuralStudent ex = new ExtramuralStudent("Danik");
+            //конструктор в абстрактном классе
             Programmer pr = new Programmer("Egor");
 
             Console.WriteLine(mi.ToString());
@@ -25,9 +26,14 @@ namespace lab_4.Classes
             IObject iobject = printer as Printer;
 
             Console.WriteLine();
+
+            //одноименные методы
             printer.IAmPrinting(printer);
+            printer.IAmPrinting(printer, "test");
+
             Console.WriteLine();
             iobject.IAmPrinting(iobject);
+            //конструктор в абстрактном классе, одноименные методы
         }
     }
 }

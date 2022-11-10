@@ -12,7 +12,7 @@ namespace lab_4.Classes
             return this.workPlace == null ? "Empty" : this.workPlace;
         }
 
-        public Programmer(string name)
+        public Programmer(string name) : base()
         {
             if (name == null || name == "")
             {

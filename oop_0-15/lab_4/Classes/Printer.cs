@@ -12,5 +12,10 @@ namespace lab_4.Classes
             Console.WriteLine(Convert.ToString(obj.GetType()));
             Console.WriteLine(obj.ToString());
         }
+        public void IAmPrinting(IObject obj, string param)
+        {
+            Console.WriteLine(Convert.ToString(obj.GetType()));
+            Console.WriteLine($"{obj.ToString()}{param}");
+        }
     }
 }
