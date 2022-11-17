@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 
 namespace lab_7.Classes
 {
+    // public class Collection<T> : ArrayList<T> where T : class
     public class Collection<T> : ArrayList<T>
     {
         private LinkedList<T> arr;

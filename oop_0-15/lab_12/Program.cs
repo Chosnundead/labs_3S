@@ -1,5 +1,6 @@
 ﻿using System;
 using lab_12.Classes;
+using System.Text.RegularExpressions;
 class Program
 {
     static void Main(string[] args)
@@ -20,5 +21,29 @@ class Program
         log.writeArrayLog(dirInfo.getParrentsDirictories());
         XXXFileManager.task_a();
         XXXFileManager.task_b();
+        XXXFileManager.task_c();
+        var fileArr = File.ReadAllLines(Path.GetFullPath(@"Files\xxxlogfile.txt"));
+        Console.WriteLine($"Количество записей: {fileArr.Length}\n");
+        Console.WriteLine($"Записи за этот час:");
+        var temp = "";
+        foreach (var item in fileArr)
+        {
+            if (!(new Regex(DateTime.Now.Hour.ToString() + @":\d{2}:\d{2}.\d{7}:").Match(item).Value.Equals("")))
+            {
+                Console.WriteLine(item);
+                temp += item + "\n";
+            }
+            // if (!(new Regex(@"^\.*" + DateTime.Now.Hour + @":\d{2}:\d{2}.\d{7}:").Match(item).Value.Equals("")))
+            // {
+            //     Console.WriteLine(item);
+            // }
+            File.WriteAllText(@"Files\xxxlogfile.txt", temp);
+        }
+        using (var stream = new FileStream(@"Files\xxxlogfile.txt", FileMode.Open))
+        {
+            //Пример использования using
+            Console.WriteLine("Можно ли читать?: " + stream.CanRead.ToString());
+        }
+
     }
 }

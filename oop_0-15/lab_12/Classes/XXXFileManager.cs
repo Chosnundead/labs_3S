@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO.Compression;
 
 namespace lab_12.Classes
 {
@@ -72,7 +73,12 @@ namespace lab_12.Classes
 
         public static void task_c()
         {
-            //to continue
+            try
+            {
+                File.Delete("Files\\XXXFiles.zip");
+            }
+            catch (Exception e) { }
+            ZipFile.CreateFromDirectory("XXXInspect\\XXXFiles\\", "Files\\XXXFiles.zip");
         }
     }
 }
