@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <person>
+    <name>Denis</name>
+    <workPlace>Army</workPlace>
+    <age>21</age>
+  </person>
+  <person>
+    <name>Vadim</name>
+    <workPlace>Car shop</workPlace>
+    <age>34</age>
+  </person>
+  <person>
+    <name>Vadim</name>
+    <workPlace>Disigner</workPlace>
+    <age>64</age>
+  </person>
+  <person>
+    <name>Vadim</name>
+    <workPlace>Gamer</workPlace>
+    <age>16</age>
+  </person>
+  <person>
+    <name>Nastya</name>
+    <workPlace>Uniresity</workPlace>
+    <age>25</age>
+  </person>
+</Root>
