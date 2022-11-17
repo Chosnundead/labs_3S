@@ -1,0 +1,12 @@
+$RECYCLE.BIN\
+Android\
+CocosDashboard\
+Documents\
+Downloads\
+Epic Games\
+Files\
+Microsoft\
+msdownld.tmp\
+Program Files (x86)\
+Programs\
+System Volume Information\
