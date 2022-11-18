@@ -1,4 +1,4 @@
-# targets:
+# statistic:
 
 | title | statistic |
 | ----: | :-------- |
@@ -7,7 +7,7 @@
 |   tfp | 25\100    |
 |   oop | 15\15     |
 
-## edits:
+## to edit:
 
 - [x] Настроить readmd
 - [ ] tfp: Поменять название папки на tfp_kyrsach, а не папка в папке
