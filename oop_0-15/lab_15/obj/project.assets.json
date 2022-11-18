@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\Code\\labs_3S\\oop_0-15\\lab_4\\lab_4.csproj",
-      "projectName": "lab_4",
-      "projectPath": "D:\\Documents\\Code\\labs_3S\\oop_0-15\\lab_4\\lab_4.csproj",
+      "projectUniqueName": "D:\\Documents\\Code\\labs_3S\\oop_0-15\\lab_15\\lab_15.csproj",
+      "projectName": "lab_15",
+      "projectPath": "D:\\Documents\\Code\\labs_3S\\oop_0-15\\lab_15\\lab_15.csproj",
       "packagesPath": "C:\\Users\\No Name\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\Code\\labs_3S\\oop_0-15\\lab_4\\obj\\",
+      "outputPath": "D:\\Documents\\Code\\labs_3S\\oop_0-15\\lab_15\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Programs\\MVS-Shared\\NuGetPackages"

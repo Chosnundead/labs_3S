@@ -29,7 +29,7 @@ namespace lab_4.Classes
 
             //одноименные методы
             printer.IAmPrinting(printer);
-            printer.IAmPrinting(printer, "test");
+            ((IObject)printer).IAmPrinting(printer);
 
             Console.WriteLine();
             iobject.IAmPrinting(iobject);

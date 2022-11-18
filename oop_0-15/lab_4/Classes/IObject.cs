@@ -5,8 +5,12 @@ using System.Threading.Tasks;
 
 namespace lab_4.Classes
 {
-    public interface IObject
+    public abstract class IObject
     {
-        public void IAmPrinting(IObject obj);
+        public void IAmPrinting(IObject obj)
+        {
+            Console.WriteLine("test!");
+            Console.WriteLine("test!");
+        }
     }
 }
