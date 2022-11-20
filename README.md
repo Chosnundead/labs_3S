@@ -2,7 +2,7 @@
 
 | title | statistic |
 | ----: | :-------- |
-|    db | 5\15      |
+|    db | 8\15      |
 | tvims | 0\end     |
 |   tfp | 25\100    |
 |   oop | 15\15     |
