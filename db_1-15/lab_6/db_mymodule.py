@@ -73,7 +73,8 @@ class Db:
             wprint("Ошибка при получении папки _temp, создаю новую...")
             self._tryForTempFile("test")
 
-        print(f"\033[1m\nЗадание №{numberOfTask}:\033[0m")
+        if numberOfTask != None:
+            print(f"\033[1m\nЗадание №{numberOfTask}:\033[0m")
         if query != "" and isinstance(query, str):
             self._tryForTempFile(query)
             os.system(
