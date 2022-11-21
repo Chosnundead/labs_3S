@@ -1,11 +1,16 @@
 
-    begin tran
-        insert Заказчики values('Луч', 'Минск', 10234);
-        begin tran
-            update Заказы set Наименование_товара = 'Луч' where Заказчик = 'Луч';
-            commit;
-            if @@trancount > 0 rollback;
-        select
-            (select count(*) from Заказы where Заказчик = 'Луч') 'Заказы',
-            (select count(*) from Заказчики where Наименование_фирмы = 'Луч') 'Заказчики';
+    create function COUNT_Zakazy(@f varchar(20)) returns int
+    as begin declare @rc int = 0;
+    set @rc = (select count(Номер_заказа)
+        from Заказы z join Заказчики zk
+            on z.Заказчик = zk. Наименование_фирмы
+                where Наименование_фирмы = @f);
+    return @rc
+    end;
+    GO
+    DECLARE @f int = dbo.COUNT_Zakazy('Луч');
+    print 'количество заказов == ' + cast(@f as varchar(4));
+    GO
+    Select Наименование_фирмы, dbo.COUNT_Zakazy(Наименование_фирмы)
+        from Заказчики;
     
