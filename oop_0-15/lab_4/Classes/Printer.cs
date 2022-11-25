@@ -7,6 +7,7 @@ namespace lab_4.Classes
 {
     public class Printer : IObject
     {
+        public Student student;
         public void IAmPrinting(IObject obj)
         {
             Console.WriteLine(Convert.ToString(obj.GetType()));

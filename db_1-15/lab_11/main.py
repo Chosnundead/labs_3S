@@ -109,18 +109,18 @@ db.forceFetch(
      set transaction isolation level READ COMMITTED
     begin transaction
     select count(*) from Заказы where Наименование_товара = 'Стул';
-    -------------------------- t1 ------------------
-    -------------------------- t2 -----------------
+    
+    
     select 'update Заказы' 'результат', count(*)
      from Заказы where Наименование_товара = 'Стул';
     commit;
     --- B ---
     begin transaction
-    -------------------------- t1 --------------------
+    
      update Заказы set Наименование_товара = 'Стул'
      where Наименование_товара = 'Стол'
      commit;
-    -------------------------- t2 --------------------
+    
     """,
 )
 db.forceFetch(
@@ -129,8 +129,7 @@ db.forceFetch(
     set transaction isolation level REPEATABLE READ
     begin transaction
     select Заказчик from Заказы where Наименование_товара = 'Стул';
-    -------------------------- t1 ------------------
-    -------------------------- t2 -----------------
+    
     select case
      when Заказчик = 'Луч' then 'insert Заказы' else ' '
     end 'результат'
@@ -138,13 +137,13 @@ db.forceFetch(
     commit;
     --- B ---
     begin transaction
-    -------------------------- t1 --------------------
+    
      insert Заказы values (12,
     'Стул'
     , 78, 10, '01.12.2014',
     'Луч');
      commit;
-    -------------------------- t2 --------------------
+    
     """,
 )
 db.forceFetch(

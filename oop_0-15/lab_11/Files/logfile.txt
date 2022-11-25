@@ -1,0 +1,73 @@
+lab_11, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+FalseBoolean IsFinite(Double)
+Boolean IsInfinity(Double)
+Boolean IsNaN(Double)
+Boolean IsNegative(Double)
+Boolean IsNegativeInfinity(Double)
+Boolean IsNormal(Double)
+Boolean IsPositiveInfinity(Double)
+Boolean IsSubnormal(Double)
+Int32 CompareTo(System.Object)
+Int32 CompareTo(Double)
+Boolean Equals(System.Object)
+Boolean op_Equality(Double, Double)
+Boolean op_Inequality(Double, Double)
+Boolean op_LessThan(Double, Double)
+Boolean op_GreaterThan(Double, Double)
+Boolean op_LessThanOrEqual(Double, Double)
+Boolean op_GreaterThanOrEqual(Double, Double)
+Boolean Equals(Double)
+Int32 GetHashCode()
+System.String ToString()
+System.String ToString(System.String)
+System.String ToString(System.IFormatProvider)
+System.String ToString(System.String, System.IFormatProvider)
+Boolean TryFormat(System.Span`1[System.Char], Int32 ByRef, System.ReadOnlySpan`1[System.Char], System.IFormatProvider)
+Double Parse(System.String)
+Double Parse(System.String, System.Globalization.NumberStyles)
+Double Parse(System.String, System.IFormatProvider)
+Double Parse(System.String, System.Globalization.NumberStyles, System.IFormatProvider)
+Double Parse(System.ReadOnlySpan`1[System.Char], System.Globalization.NumberStyles, System.IFormatProvider)
+Boolean TryParse(System.String, Double ByRef)
+Boolean TryParse(System.ReadOnlySpan`1[System.Char], Double ByRef)
+Boolean TryParse(System.String, System.Globalization.NumberStyles, System.IFormatProvider, Double ByRef)
+Boolean TryParse(System.ReadOnlySpan`1[System.Char], System.Globalization.NumberStyles, System.IFormatProvider, Double ByRef)
+System.TypeCode GetTypeCode()
+System.Type GetType()
+fields:
+System.String Empty
+properties:
+Char Chars [Int32]
+Int32 Length
+System.IComparable
+System.IComparable`1[System.Char]
+System.IEquatable`1[System.Char]
+System.IConvertible
+System.ISpanFormattable
+System.IFormattable
+System.IBinaryInteger`1[System.Char]
+System.IBinaryNumber`1[System.Char]
+System.IBitwiseOperators`3[System.Char,System.Char,System.Char]
+System.INumber`1[System.Char]
+System.IAdditionOperators`3[System.Char,System.Char,System.Char]
+System.IAdditiveIdentity`2[System.Char,System.Char]
+System.IComparisonOperators`2[System.Char,System.Char]
+System.IEqualityOperators`2[System.Char,System.Char]
+System.IDecrementOperators`1[System.Char]
+System.IDivisionOperators`3[System.Char,System.Char,System.Char]
+System.IIncrementOperators`1[System.Char]
+System.IModulusOperators`3[System.Char,System.Char,System.Char]
+System.IMultiplicativeIdentity`2[System.Char,System.Char]
+System.IMultiplyOperators`3[System.Char,System.Char,System.Char]
+System.ISpanParseable`1[System.Char]
+System.IParseable`1[System.Char]
+System.ISubtractionOperators`3[System.Char,System.Char,System.Char]
+System.IUnaryNegationOperators`2[System.Char,System.Char]
+System.IUnaryPlusOperators`2[System.Char,System.Char]
+System.IShiftOperators`2[System.Char,System.Char]
+System.IMinMaxValue`1[System.Char]
+System.IUnsignedNumber`1[System.Char]
+ttt
+setSec
+test_0
+test_1

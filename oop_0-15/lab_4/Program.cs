@@ -34,6 +34,9 @@ namespace lab_4.Classes
             Console.WriteLine();
             iobject.IAmPrinting(iobject);
             //конструктор в абстрактном классе, одноименные методы
+            //интерфейс
+            //композиция
+            //иерархия
         }
     }
 }

@@ -110,6 +110,7 @@ db.forceFetch(
     PRINT'Количество товаров больше 20';
     PRINT'Количество = ' + cast(@x as varchar(10));
     end;
+    Else
     begin
     PRINT'Количество товаров больше 20';
     PRINT'Количество = ' + cast(@x as varchar(10));
