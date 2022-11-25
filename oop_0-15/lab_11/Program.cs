@@ -36,7 +36,7 @@ class Program
         writeInLog(Reflector.getMethodsByParams("lab_11.Classes.Time", "int"));
         Console.WriteLine($"\n\ttask_1g:");
         var task1g = File.ReadAllLines(@"Files\task1g.txt");
-        Reflector.Invoke(Reflector.Create(task1g[0]), task1g[1], new object[] { new Random().Next(1, 21) });
+        Reflector.Invoke(Reflector.Create(task1g[0]), task1g[1], new object[] { new Random().Next(1, 666) });
         Console.WriteLine($"\n\n\ttask_2:");
         Reflector.Create("lab_11.Classes.Time");
     }
