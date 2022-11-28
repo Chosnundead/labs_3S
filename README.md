@@ -2,7 +2,7 @@
 
 | title | statistic |
 | ----: | :-------- |
-|   tfp | 25\100    |
+|   tfp | 26\100    |
 |   pvs | 0\100     |
 | tvims | 0\end     |
 |   oib | 0\end     |
