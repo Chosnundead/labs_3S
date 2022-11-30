@@ -1,9 +1,7 @@
+import React, { useContext, useState } from "react";
+import { Col, Row, Space, Menu, Card } from "antd";
 import Input from "antd/lib/input/Input";
 import { Content } from "antd/lib/layout/layout";
-import { Col, Row } from "antd";
-import React, { useState } from "react";
-import { shopData } from "../Utils/db";
-import { Space } from "antd";
 import {
   AppstoreOutlined,
   ContainerOutlined,
@@ -13,9 +11,10 @@ import {
   MenuUnfoldOutlined,
   PieChartOutlined,
 } from "@ant-design/icons";
-import { Button, Menu } from "antd";
-import { Card } from "antd";
-import { CardItem } from "./CardItem";
+import { shopData } from "../Utils/db";
+import { ScreenContext } from "../Utils/ScreenContext";
+import { CardItem } from "../Components/CardItem";
+
 const { Meta } = Card;
 function getItem(label, key, icon, children, type) {
   return {
@@ -26,7 +25,9 @@ function getItem(label, key, icon, children, type) {
     type,
   };
 }
-export const BodyShop = ({ screenSize }) => {
+
+export const Shop = () => {
+  const { screenSize } = useContext(ScreenContext);
   const items = [
     getItem("Option 1", "1", <PieChartOutlined />),
     getItem("Option 2", "2", <DesktopOutlined />),
@@ -55,8 +56,12 @@ export const BodyShop = ({ screenSize }) => {
         }}
       >
         <div
-          className="site-layout-content"
-          style={{ borderRadius: screenSize >= 768 ? "13px" : "0px" }}
+          style={{
+            borderRadius: screenSize >= 768 ? "13px" : "0px",
+            minHeight: "280px",
+            padding: "24px",
+            background: "#fff",
+          }}
         >
           <Row style={{ justifyContent: "center" }}>
             <Col flex={screenSize >= 768 ? "200px" : "auto"}></Col>

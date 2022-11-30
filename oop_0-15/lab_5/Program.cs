@@ -16,5 +16,7 @@ class Program
         container.task1();
         container.task2();
         container.task3();
+        //перечесления
+        //структураы
     }
 }

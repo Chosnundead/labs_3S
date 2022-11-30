@@ -7,34 +7,33 @@ import {
 } from "@ant-design/icons";
 
 export const NavMenuItem = ({ item }) => {
-  const navMenu = ["Главная", "Продукция", "Акции", "Контакты"];
   switch (item) {
     case "Главная":
       return (
         <div>
           <HomeOutlined />
-          <span className="nav-menu-item-text">Главная</span>
+          <span style={{ marginLeft: "6px" }}>Главная</span>
         </div>
       );
     case "Продукция":
       return (
         <div>
           <ShoppingOutlined />
-          <span className="nav-menu-item-text">Продукция</span>
+          <span style={{ marginLeft: "6px" }}>Продукция</span>
         </div>
       );
     case "Акции":
       return (
         <div>
           <StockOutlined />
-          <span className="nav-menu-item-text">Акции</span>
+          <span style={{ marginLeft: "6px" }}>Акции</span>
         </div>
       );
     case "Контакты":
       return (
         <div>
           <ContactsOutlined />
-          <span className="nav-menu-item-text">Контакты</span>
+          <span style={{ marginLeft: "6px" }}>Контакты</span>
         </div>
       );
   }
