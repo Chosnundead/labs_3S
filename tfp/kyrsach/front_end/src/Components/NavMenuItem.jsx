@@ -2,7 +2,7 @@ import React from "react";
 import {
   HomeOutlined,
   ShoppingOutlined,
-  StockOutlined,
+  FileOutlined,
   ContactsOutlined,
 } from "@ant-design/icons";
 
@@ -22,11 +22,11 @@ export const NavMenuItem = ({ item }) => {
           <span style={{ marginLeft: "6px" }}>Продукция</span>
         </div>
       );
-    case "Акции":
+    case "Статьи":
       return (
         <div>
-          <StockOutlined />
-          <span style={{ marginLeft: "6px" }}>Акции</span>
+          <FileOutlined />
+          <span style={{ marginLeft: "6px" }}>Статьи</span>
         </div>
       );
     case "Контакты":

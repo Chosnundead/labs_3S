@@ -1,32 +1,49 @@
 import React from "react";
-import { Card } from "antd";
-import sale from "../Images/sale.png";
+import { Card, Typography } from "antd";
+import { DualImage } from "./DualImage";
 const { Meta } = Card;
+const { Text, Paragraph } = Typography;
 
-export const CardItem = ({ item }) => {
+export const CardItem = ({ item, ...props }) => {
   return (
     <div>
-      <img
-        //!
-        style={{ position: "absolute", zIndex: "1", display: "block" }}
-        width={50}
-        height={50}
-        src={sale}
-      ></img>
       <Card
+        {...props}
         hoverable
         style={{
-          width: 240,
+          width: 300,
         }}
-        cover={<img alt="example" src={item.image} />}
+        cover={
+          item.sale.is ? (
+            <DualImage
+              alt="example"
+              src={item.images[0]}
+              style={{
+                maxHeight: 300,
+              }}
+              width={300}
+            ></DualImage>
+          ) : (
+            <img
+              alt="example"
+              src={item.images[0]}
+              style={{
+                maxHeight: 300,
+              }}
+              width={300}
+            />
+          )
+        }
       >
         <Meta
           title={
             <div>
-              <div>{item.title}</div>
+              <Paragraph ellipsis={true} style={{ marginBottom: "0px" }}>
+                {item.title}
+              </Paragraph>
               {item.sale.is ? (
-                <div>
-                  <text
+                <Paragraph>
+                  <Text
                     style={{
                       fontWeight: "300",
                       textDecoration: "line-through",
@@ -35,33 +52,29 @@ export const CardItem = ({ item }) => {
                     }}
                   >
                     {(item.sale.amount * item.price + item.price).toFixed(2)}
-                  </text>
-                  <text
+                  </Text>
+                  <Text
                     style={{
                       color: "rgba(228, 42, 42, 0.88)",
                     }}
                   >
                     {" "}
-                    {item.price.toFixed(2)}$
-                  </text>
-                </div>
+                    {item.price.toFixed(2)}BYN
+                  </Text>
+                </Paragraph>
               ) : (
-                <div
+                <Paragraph
                   style={{
                     color: "rgba(27, 27, 27, 0.88)",
                   }}
                 >
-                  {item.price}$
-                </div>
+                  {item.price}BYN
+                </Paragraph>
               )}
             </div>
           }
           description={
-            <div>
-              <div style={{ overflowWrap: "break-word" }}>
-                {item.description}
-              </div>
-            </div>
+            <div style={{ overflowWarp: "break-word" }}>{item.description}</div>
           }
           style={{ justifyContent: "center" }}
         />

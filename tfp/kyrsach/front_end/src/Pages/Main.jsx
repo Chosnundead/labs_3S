@@ -2,6 +2,10 @@ import React, { useContext } from "react";
 import { Typography, Col, Row, Layout, Carousel } from "antd";
 import { ScreenContext } from "../Utils/ScreenContext";
 import background from "../Images/background.jpg";
+import banner_0 from "../Images/banner_0.jpg";
+import banner_1 from "../Images/banner_1.jpg";
+import banner_2 from "../Images/banner_2.jpg";
+import banner_3 from "../Images/banner_3.jpg";
 
 const contentStyle = {
   height: "160px",
@@ -9,6 +13,7 @@ const contentStyle = {
   lineHeight: "160px",
   textAlign: "center",
   background: "#364d79",
+  height: 333,
 };
 const { Content } = Layout;
 const { Text } = Typography;
@@ -45,7 +50,8 @@ export const Main = () => {
                   : { fontSize: "24px", fontWeight: "550" }
               }
             >
-              Теплый электрический пол и терморегуляторы WÄRMEHAUS PREMIUM
+              Теплый электрический пол и терморегуляторы WÄRMEHAUS PREMIUM и
+              других лучших производителей.
             </Text>
             <Row
               wrap={screenSize >= 768 ? false : true}
@@ -62,39 +68,62 @@ export const Main = () => {
                   водостоков, крыш, кровель и открытых площадок, системы
                   стаивания снега и льда на крышах, в водосточных и сливных
                   трубах, дорожках, лестницах, террасах, балконах, пандусах,
-                  эстакадах и иных открытых площадках.
+                  эстакадах и иных открытых площадках. Широкий выбор
+                  нагревательных матов, нагревательных кабелей, инфракрасной
+                  пленки, терморегуляторов и комплектующих от лучших европейских
+                  и российских производителей!
                 </Text>
               </Col>
             </Row>
             <Row style={{ marginTop: "24px" }} gutter={[24, 24]}>
               <Col span={8}>
-                <Text strong>Почему нас</Text>
+                <Text strong>Почему нас выбирают</Text>
                 <br></br>
                 <Text>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
-                  sequi adipisci odit, omnis necessitatibus voluptas. Doloribus,
-                  nemo, doloremque iste atque libero nam vitae pariatur officiis
-                  aliquid optio, distinctio tempora eius.
+                  Индивидуальный подход к клиенту. Мы небольшая фирма, которая
+                  рассматривает свою величину как преимущество, благодаря
+                  которому мы можем делать упор на Ваши индивидуальные
+                  потребности и гибко на них реагировать. Опыт и
+                  профессионализм. Мы осознаём, что каждый продукт отличается от
+                  остальных, поэтому требует новых подходов и новых оригинальных
+                  инженерных решений. Наш многолетний опыт гарантирует вам
+                  уникальные результаты фильтрования. Качество без компромиссов.
+                  Мы уделяем внимание каждой мелочи и стремимся достигнуть
+                  простоты оборудования, чтобы предотвратить механические
+                  поломки; и этот подход оправдывает себя. Этика и честность. На
+                  службе общества - так мы понимаем нашу работу. Этому принципу
+                  мы подчиняем.
                 </Text>
               </Col>
               <Col span={8}>
-                <Text strong>Ебать мы лучшие</Text>
+                <Text strong>Гарантия качества</Text>
                 <br></br>
                 <Text>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                  itaque aut ad! Maxime accusantium quas illo veniam natus
-                  nobis, autem dolores provident quae repellendus. Quod unde
-                  numquam magnam. Sequi, pariatur.
+                  Качество для нас выведено в абсолют. Мы считаем, что лучший
+                  товар - надёжный товар. Исходя из этого мы представляем
+                  сильные гарантии наших продуктов. Также мы предоставляем
+                  возможность возврата продуктов, при соблюдении главных условий
+                  эксплуатации. А главное, что для нас продажа некачественного
+                  товара - главный страх. Мы продаем только надежный товар таких
+                  стран как Чехия, Германия, Россия и другие.
                 </Text>
               </Col>
               <Col span={8}>
-                <Text strong>Заебись</Text>
+                <Text strong>О компании</Text>
                 <br></br>
                 <Text>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Pariatur, voluptas dolore. Similique maxime deserunt
-                  voluptatem natus id perferendis, qui beatae sed, obcaecati
-                  quisquam ea quis, corrupti nam possimus. Dolor, obcaecati?
+                  Ratione quam eveniet, a eos facere perspiciatis eius, voluptas
+                  voluptatem blanditiis id iusto rerum enim, accusantium in
+                  maxime. Quidem, enim officiis aperiam doloribus inventore
+                  totam ex, earum modi blanditiis minus aliquid. Natus id
+                  nostrum illo harum consectetur corrupti nisi reiciendis
+                  voluptates aliquid quae unde, iusto eius numquam. Ipsa eaque
+                  ratione repudiandae cum, expedita non, consectetur neque
+                  harum, velit impedit nostrum praesentium quibusdam ipsam illum
+                  animi? Itaque saepe fugit incidunt dolor aperiam, pariatur
+                  provident architecto velit assumenda, repellendus dolorem
+                  delectus, esse sunt veritatis? Nam totam libero nemo in velit
                 </Text>
               </Col>
             </Row>
@@ -105,16 +134,48 @@ export const Main = () => {
             <Col>
               <Carousel autoplay>
                 <div>
-                  <h3 style={contentStyle}>1</h3>
+                  <h3 style={contentStyle}>
+                    <img
+                      src={banner_0}
+                      style={{
+                        width: "-webkit-fill-available",
+                        height: "-webkit-fill-available",
+                      }}
+                    ></img>
+                  </h3>
                 </div>
                 <div>
-                  <h3 style={contentStyle}>2</h3>
+                  <h3 style={contentStyle}>
+                    <img
+                      src={banner_1}
+                      style={{
+                        width: "-webkit-fill-available",
+                        height: "-webkit-fill-available",
+                      }}
+                    ></img>
+                  </h3>
                 </div>
                 <div>
-                  <h3 style={contentStyle}>3</h3>
+                  <h3 style={contentStyle}>
+                    <img
+                      src={banner_2}
+                      style={{
+                        width: "-webkit-fill-available",
+                        height: "-webkit-fill-available",
+                      }}
+                    ></img>
+                  </h3>
                 </div>
                 <div>
-                  <h3 style={contentStyle}>4</h3>
+                  <h3 style={contentStyle}>
+                    <img
+                      src={banner_3}
+                      style={{
+                        width: "-webkit-fill-available",
+                        height: "-webkit-fill-available",
+                      }}
+                    ></img>
+                  </h3>
                 </div>
               </Carousel>
             </Col>

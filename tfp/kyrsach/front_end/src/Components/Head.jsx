@@ -5,7 +5,7 @@ import { NavMenuItem } from "./NavMenuItem";
 const { Header } = Layout;
 
 export const Head = () => {
-  const navMenu = ["Главная", "Продукция", "Акции", "Контакты"];
+  const navMenu = ["Главная", "Продукция", "Статьи", "Контакты"];
   const location = useLocation();
   const navigate = useNavigate();
   return (
@@ -25,6 +25,8 @@ export const Head = () => {
           mode="horizontal"
           defaultSelectedKeys={() => {
             if (location.pathname.includes("shop")) return ["2"];
+            if (location.pathname.includes("posts")) return ["3"];
+            if (location.pathname.includes("about")) return ["4"];
             return ["1"];
           }}
           items={navMenu.map((item, index) => {
@@ -41,6 +43,12 @@ export const Head = () => {
                 break;
               case "Продукция":
                 navigate("/shop");
+                break;
+              case "Контакты":
+                navigate("/about");
+                break;
+              case "Статьи":
+                navigate("/posts");
                 break;
               default:
                 navigate("");
